@@ -1,0 +1,35 @@
+.basket {
+    display:inline-block; 
+    vertical-align: top; 
+    margin:50px; 
+    border-radius:20px; 
+    padding:2px; 
+    border:solid #1976d2 2px;
+}
+
+h2 {
+    color:#1976d2; 
+    text-align:center
+}
+
+img {
+    width:50px;
+    height:50px
+}
+
+.sales-tax-heading {
+    width:250px;
+    font-style:italic
+}
+
+.sales-tax-value {
+    font-style:italic
+}
+
+.total-heading {
+    width:250px;font-weight:bold
+}
+
+.total-value {
+    font-weight:bold;
+}

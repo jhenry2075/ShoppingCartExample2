@@ -1,0 +1,18 @@
+<h3>Checkout</h3>
+
+<div *ngFor="let basket of store.getBaskets()" class="basket">
+    <h2>{{ basket.getName() }}</h2>
+    <div class="cart-item" *ngFor="let item of basket.getLineItems()">
+      <img [src]="item.product.url">
+      <span style="width:200px;">({{item.quantity}}) {{item.product.description}}</span>
+      <span>{{item.totalPrice | currency}}</span>
+    </div>
+    <div class="cart-item">
+        <span class="sales-tax-heading">Sales taxes paid</span>
+        <span class="sales-tax-value">{{basket.getTotalSalesTax() | currency}}</span>
+      </div>
+    <div class="cart-item">
+      <span class="total-heading">Total</span>
+      <span class="total-value">{{basket.getTotal() | currency}}</span>
+    </div>
+</div>

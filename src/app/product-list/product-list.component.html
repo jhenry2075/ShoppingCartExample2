@@ -1,0 +1,7 @@
+<div class="product" *ngFor="let product of products">
+    <img src="{{product.url}}" width="100%" height="100%">
+    <span class="price">{{ product.price | currency:'USD':'symbol-narrow' }}</span><br>
+    <div class="description">{{product.description}}</div>
+    <button class="button fancy-button" [disabled]="!isItemInCart(product)" (click)="removeFromCart(product)"><i class="material-icons" title="Remove from cart">remove_shopping_cart</i></button>
+<button class="button fancy-button" (click)="addToCart(product)"><i class="material-icons" title="Add to cart">add_shopping_cart</i><span *ngIf="isItemInCart(product)" class="quantity">{{getItemQuantity(product)}}</span></button>
+</div>

@@ -1,0 +1,30 @@
+.product {
+    width:200px;
+    height:200px;
+    margin:20px;
+    margin-bottom:150px;
+    margin-right:100px;
+    float: left;
+}
+
+.product .description {
+    height:50px;
+}
+
+.product .price {
+    font-weight:bold;
+}
+
+.product .quantity {
+    margin-left:20px;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    padding:6px;
+    background: rgb(42, 201, 10);
+    color: white;
+    text-align:center;
+    vertical-align: middle;
+    line-height:24px;
+    font: 12px Arial, sans-serif;
+}
