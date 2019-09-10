@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { TopBarComponent } from './topbar/topbar.component';
 import { ProductListComponent} from './product-list/product-list.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 
@@ -12,7 +11,7 @@ import { Store } from './services/mock-store.service';
 
 @NgModule({
   declarations: [
-    AppComponent, TopBarComponent, ProductListComponent, CheckoutComponent
+    AppComponent, ProductListComponent, CheckoutComponent
   ],
   imports: [
     BrowserModule,

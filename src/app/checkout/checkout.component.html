@@ -1,6 +1,6 @@
 <h3>Checkout</h3>
 
-<div *ngFor="let basket of store.getBaskets()" class="basket">
+<div *ngFor="let basket of getBaskets()" class="basket">
     <h2>{{ basket.getName() }}</h2>
     <div class="cart-item" *ngFor="let item of basket.getLineItems()">
       <img [src]="item.product.url">

@@ -13,6 +13,10 @@ export class CheckoutComponent implements OnInit {
   constructor(private store: Store) {
   }
 
+  public getBaskets() {
+    return this.store.getBaskets();
+  }
+
   ngOnInit() {
     console.clear();
 
