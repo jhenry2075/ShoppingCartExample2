@@ -40,7 +40,7 @@ export class Basket {
             const lineItem = {
                 quantity: q,
                 product: p,
-                totalPrice: q * (p.price + this.store.calculateSalesTax(p))
+                totalPrice: Math.round(q * (p.price + this.store.calculateSalesTax(p)) * 100) / 100
             };
             array.push(lineItem);
         });
@@ -52,7 +52,7 @@ export class Basket {
         this.products.forEach((quantity, product) => {
             total += (quantity * (product.price + this.store.calculateSalesTax(product)));
         });
-        return total;
+        return Math.round(total * 100) / 100;
     }
 
     public getTotalSalesTax() {

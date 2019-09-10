@@ -26,7 +26,7 @@ describe('Testing the Store', () => {
       basket.addProduct(PRODUCTS[0]);
       basket.addProduct(PRODUCTS[1]);
       basket.addProduct(PRODUCTS[2]);
-      expect(Math.ceil(basket.getLineItems()[0].totalPrice* 100) / 100).toBe(16.00);
+      expect(basket.getLineItems()[0].totalPrice).toBe(16.00);
     });
 
     it('Basket 1 line two should have a total of 109.99', () => {
@@ -35,7 +35,7 @@ describe('Testing the Store', () => {
       basket.addProduct(PRODUCTS[0]);
       basket.addProduct(PRODUCTS[1]);
       basket.addProduct(PRODUCTS[2]);
-      expect(Math.round(basket.getLineItems()[1].totalPrice * 100) / 100).toBe(109.99);
+      expect(basket.getLineItems()[1].totalPrice).toBe(109.99);
     });
 
     it('Basket 1 line three should have a total of 0.99', () => {
@@ -44,7 +44,7 @@ describe('Testing the Store', () => {
       basket.addProduct(PRODUCTS[0]);
       basket.addProduct(PRODUCTS[1]);
       basket.addProduct(PRODUCTS[2]);
-      expect(Math.ceil(basket.getLineItems()[2].totalPrice* 100) / 100).toBe(0.99);
+      expect(basket.getLineItems()[2].totalPrice).toBe(0.99);
     });
 
     it('Basket 1 should have a total tax of 10.00', () => {
@@ -57,10 +57,10 @@ describe('Testing the Store', () => {
       const tax1 = store.calculateSalesTax(basket.getLineItems()[1].product);
       const tax2 = store.calculateSalesTax(basket.getLineItems()[2].product);
       const totalTax = tax0 + tax1 + tax2;
-      expect(Math.round(totalTax * 100) / 100).toBe(10.00);
+      expect(totalTax).toBe(10.00);
     });
 
-    it('Basket 1 should have a total of 126.80', () => {
+    it('Basket 1 should have a total of 126.98', () => {
       const store: Store = new Store();
       const basket = store.createBasket();
       basket.addProduct(PRODUCTS[0]);
@@ -70,7 +70,7 @@ describe('Testing the Store', () => {
       const total1 = basket.getLineItems()[1].totalPrice;
       const total2 = basket.getLineItems()[2].totalPrice;
       const total = total0 + total1 + total2;
-      expect(Math.round(total * 100) / 100).toBe(126.98);
+      expect(basket.getTotal()).toBe(126.98);
     });
 
     it('Basket 2 should contain two products', () => {
@@ -86,7 +86,7 @@ describe('Testing the Store', () => {
       const basket = store.createBasket();
       basket.addProduct(PRODUCTS[3]);
       basket.addProduct(PRODUCTS[4]);
-      expect(Math.ceil(basket.getLineItems()[0].totalPrice* 100) / 100).toBe(11.55);
+      expect(basket.getLineItems()[0].totalPrice).toBe(11.55);
     });
 
     it('Basket 2 line two should have a total of 17,251.50', () => {
@@ -94,18 +94,18 @@ describe('Testing the Store', () => {
       const basket = store.createBasket();
       basket.addProduct(PRODUCTS[3]);
       basket.addProduct(PRODUCTS[4]);
-      expect(Math.ceil(basket.getLineItems()[1].totalPrice* 100) / 100).toBe(17251.50);
+      expect(basket.getLineItems()[1].totalPrice).toBe(17251.50);
     });
 
     it('Basket 2 should have a total tax of 2250.80', () => {
       const store: Store = new Store();
       const basket = store.createBasket();
       basket.addProduct(PRODUCTS[3]);
-      basket.addProduct(PRODUCTS[4]);;
+      basket.addProduct(PRODUCTS[4]);
       const tax0 = store.calculateSalesTax(basket.getLineItems()[0].product);
       const tax1 = store.calculateSalesTax(basket.getLineItems()[1].product);
       const totalTax = tax0 + tax1;
-      expect(Math.round(totalTax * 100) / 100).toBe(2250.80);
+      expect(totalTax).toBe(2250.80);
     });
 
     it('Basket 1 should have a total of 126.80', () => {
@@ -116,7 +116,7 @@ describe('Testing the Store', () => {
       const total0 = basket.getLineItems()[0].totalPrice;
       const total1 = basket.getLineItems()[1].totalPrice;
       const total = total0 + total1;
-      expect(Math.round(total * 100) / 100).toBe(17263.05);
+      expect(total).toBe(17263.05);
     });
 
     it('Basket 3 should contain four products', () => {
@@ -136,7 +136,7 @@ describe('Testing the Store', () => {
       basket.addProduct(PRODUCTS[6]);
       basket.addProduct(PRODUCTS[7]);
       basket.addProduct(PRODUCTS[8]);
-      expect(Math.ceil(basket.getLineItems()[0].totalPrice/0.01)*0.01).toBe(79.79);
+      expect(basket.getLineItems()[0].totalPrice).toBe(79.79);
     });
 
     it('Basket 3 line two should have a total of 60.50', () => {
@@ -146,7 +146,7 @@ describe('Testing the Store', () => {
       basket.addProduct(PRODUCTS[6]);
       basket.addProduct(PRODUCTS[7]);
       basket.addProduct(PRODUCTS[8]);
-      expect(Math.ceil(basket.getLineItems()[1].totalPrice* 100) / 100).toBe(60.50);
+      expect(basket.getLineItems()[1].totalPrice).toBe(60.50);
     });
 
     it('Basket 3 line three should have a total of 11.50', () => {
@@ -156,7 +156,7 @@ describe('Testing the Store', () => {
       basket.addProduct(PRODUCTS[6]);
       basket.addProduct(PRODUCTS[7]);
       basket.addProduct(PRODUCTS[8]);
-      expect(Math.ceil(basket.getLineItems()[2].totalPrice* 100) / 100).toBe(11.50);
+      expect(basket.getLineItems()[2].totalPrice).toBe(11.50);
     });
 
     it('Basket 3 line four should have a total of 997.99', () => {
@@ -166,7 +166,7 @@ describe('Testing the Store', () => {
       basket.addProduct(PRODUCTS[6]);
       basket.addProduct(PRODUCTS[7]);
       basket.addProduct(PRODUCTS[8]);
-      expect(Math.ceil(basket.getLineItems()[3].totalPrice* 100) / 100).toBe(997.99);
+      expect(basket.getLineItems()[3].totalPrice).toBe(997.99);
     });
 
     it('Basket 3 should have a total tax of 2250.80', () => {
@@ -181,7 +181,7 @@ describe('Testing the Store', () => {
       const tax2 = store.calculateSalesTax(basket.getLineItems()[2].product);
       const tax3 = store.calculateSalesTax(basket.getLineItems()[3].product);
       const totalTax = tax0 + tax1 + tax2 + tax3;
-      expect(Math.round(totalTax * 100) / 100).toBe(10.80);
+      expect(totalTax).toBe(10.80);
     });
 
     it('Basket 3 should have a total of 1149.78', () => {
@@ -196,7 +196,7 @@ describe('Testing the Store', () => {
       const total2 = basket.getLineItems()[2].totalPrice;
       const total3 = basket.getLineItems()[3].totalPrice;
       const total = total0 + total1 + total2 + total3;
-      expect(Math.round(total * 100) / 100).toBe(1149.78);
+      expect(total).toBe(1149.78);
     });
 
   });

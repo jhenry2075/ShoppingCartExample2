@@ -1,3 +1,7 @@
+# Author
+This project was created by James Henry as an assignment.
+Dates: 2019-09-07 through 2019-09-09
+
 # ShoppingCartExample2
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.3.
@@ -13,6 +17,16 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## Build and Deploy to AWS
+
+Run `ng run build:serverless:deploy` to build the project, package it, and deploy
+it to AWS. It creates a CloudFormation stack and a corresponding S3 bucket to host the code.
+The CloudFormation stack creates the resources necessary for hosting the web application
+as a serverless application. The URL is listed as the output to this command.
+
+## Linting
+Run `ng lint` to check the source code for best practices.
 
 ## Running unit tests
 

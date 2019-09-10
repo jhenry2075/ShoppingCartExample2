@@ -103,7 +103,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/shoppingcartexample2/production/1568085261435-2019-09-10T03:14:21.435Z/shoppingcartexample2.zip"
+          "S3Key": "serverless/shoppingcartexample2/production/1568085680001-2019-09-10T03:21:20.001Z/shoppingcartexample2.zip"
         },
         "FunctionName": "shoppingcartexample2-production-api",
         "Handler": "lambda.universal",
@@ -122,14 +122,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "ApiLambdaVersion7etAK47DrAij73zDdfSuEmLgV0K6MxoGvcztaCwCsSI": {
+    "ApiLambdaVersionOv1AqVcClWNQpRikGjfLM8vmHQGeZe81deBwMfk6w": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ApiLambdaFunction"
         },
-        "CodeSha256": "MSQWq0sj08edWoCFDD172dV1e0yLtdsVut75za8+QNw="
+        "CodeSha256": "pBtGh45nDe+P96w2MH20qKekRFtUa1OefYNmRnb5y14="
       }
     },
     "ApiGatewayRestApi": {
@@ -247,7 +247,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1568085210298": {
+    "ApiGatewayDeployment1568085643762": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -317,7 +317,7 @@
     "ApiLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ApiLambdaVersion7etAK47DrAij73zDdfSuEmLgV0K6MxoGvcztaCwCsSI"
+        "Ref": "ApiLambdaVersionOv1AqVcClWNQpRikGjfLM8vmHQGeZe81deBwMfk6w"
       }
     },
     "ServiceEndpoint": {
